@@ -36,18 +36,4 @@ export default class TelegramBotProvider {
   public async boot() {
     // All bindings are ready, feel free to use them
   }
-
-  public async ready() {
-    // App is ready
-    const telegram = this.app.container.resolveBinding('Telegram/Bot')
-
-    telegram.start()
-  }
-
-  public async shutdown() {
-    // Cleanup, since app is going down
-    const telegram = this.app.container.resolveBinding('Telegram/Bot')
-
-    telegram.stop()
-  }
 }

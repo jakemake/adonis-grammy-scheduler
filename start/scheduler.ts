@@ -1,7 +1,4 @@
 import Scheduler from "@ioc:Adonis/Addons/Scheduler"
+import TelegramTest from "Commands/TelegramTest";
 
-// Scheduler.command("inspire").everyFiveSeconds();
-
-Scheduler.call(() => {
-    console.log("Pruge DB!");
-}).everyFiveSeconds();
+Scheduler.command(TelegramTest).everyTenSeconds();

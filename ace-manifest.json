@@ -1,5 +1,29 @@
 {
   "commands": {
+    "telegram:listen": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": true
+      },
+      "commandPath": "./commands/TelegramListener",
+      "commandName": "telegram:listen",
+      "description": "",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "telegram:test": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/TelegramTest",
+      "commandName": "telegram:test",
+      "description": "",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",
