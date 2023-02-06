@@ -29,9 +29,16 @@ export default class TelegramListener extends BaseCommand {
   }
 
   public async run() {
+    console.log("Starting telegram listener")
 
     TelegramBot.on("message", console.log);
 
     await TelegramBot.start()
+
+    // not sure if it works with SIGINT
+    this.onExit(async () => {
+      console.log("Shutting down telegram listener")
+      await TelegramBot.stop()
+    })
   }
 }
