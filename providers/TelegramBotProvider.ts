@@ -36,4 +36,11 @@ export default class TelegramBotProvider {
   public async boot() {
     // All bindings are ready, feel free to use them
   }
+
+  public async shutdown() {
+    // move and handle shutdown (SIGTERM) inside TelegramListener
+    const telegram = this.app.container.resolveBinding('Telegram/Bot')
+
+    await telegram.stop()
+  }
 }
